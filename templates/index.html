@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Blogger</title>
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+    </head>
+    <body>
+        <header class="text-center">
+            <h1>Blogger</h1>
+            <p>(skills used : python,jinja2,googleDataStore,googleAppEngine)</p>
+        </header>
+        <div class="container">
+            <form action="/blog/newpost">
+                {% for blogData in blogAllData %}
+                    <article class="text-center">
+                        <div class="blogheader">
+                            <h3 class="blogTitle">{{blogData.blogTitle}}</h3>
+                            <p class="blogDate">{{blogData.created}}</p>
+                            <div style="clear: both;"></div>
+                        </div>
+                        <div class="blogDescription">
+                            {{blogData.blogDescription}}
+                        </div>
+                    </article>
+                {% endfor %}
+                <input class="inputarea button" type="submit" value="Add New Blog">
+            </form>
+            <div>
+            </body>
+        </html>
